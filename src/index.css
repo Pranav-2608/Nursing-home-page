@@ -1,3 +1,8 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +16,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.header{
+  background: rgb(237,184,196);
+  background: linear-gradient(90deg, rgba(237,184,196,1) 0%, rgba(255,255,255,1) 32%, rgba(255,255,255,1) 64%, rgba(205,186,224,1) 100%);
+}
+
+@layer base{
+  section{
+    @apply py-[75px]
+  }
+}
+
+@layer components{
+  .container{
+    @apply max-w-full w-[1440px] px-5 mx-auto
+  }
+
+  .btn{
+    @apply bg-blue-700 py-[15px] px-[35px] rounded-[50px] text-white font-[600] mt-[38px]
+  }
+
+  .heading{
+    @apply text-[44px] leading-[54px] font-[700] text-black
+  }
+
+  .text_para{
+    @apply text-[18px] leading-[30px] font-[400]  mt-[18px] text-black
+  }
+}
+
+@media only screen and (max-width:1024px){
+  .container{
+    @apply w-full
+  }
+
+  section{
+    @apply py-[35px]
+  }
+
+}
+
