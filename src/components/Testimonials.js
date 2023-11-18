@@ -2,24 +2,26 @@ import React from 'react';
 
 // import AiFillStar from 'aiFillStar'
 import { AiFillStar } from 'react-icons/ai';
-
-import TestiCard from './TestiCard';
 import { testimonials } from '../data';
 
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Pagination } from 'swiper/core';
-import 'swiper/swiper.min.css';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 
 
 import profile from '../assets/profile.webp'
 
-SwiperCore.use([Pagination]);
 const Testimonials = () => {
 
     const sliderSettings = {
-        spaceBetween: 20,
-        slidesPerView: 1,
-        pagination: { clickable: true },
+       
         breakpoints: {
             640:{
                 slidesPerView:1,
@@ -47,11 +49,11 @@ const Testimonials = () => {
             </div>
 
             </div>
-            <div className='swiper-container'>
-            <Swiper {...sliderSettings} >
+           
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             {
                 testimonials.map((item,index)=>(
-                <SwiperSlide key={index}>
+                <div key={index}>
                  <div className='py-[30px] px-5 rounded-3'>
                     <div className='flex items-center gap-[13px]'>
                         <img className="w-[200px]" src={profile}/>
@@ -71,13 +73,13 @@ const Testimonials = () => {
                        {item.desc}
                  </p>
                
-               </SwiperSlide>
+               </div>
 
                 ))
                
             }
-            </Swiper>
             </div>
+           
           </section>
               
         </div>

@@ -62,7 +62,7 @@ const Header = () => {
 
                {/* list */}
                <div className='navigation'>
-                 <ul className={`lg:flex gap-10 items-center  ${toggle == true ? `flex flex-col bg-[#fff] gap-10 z-100 absolute top-0 right-0 items-center justify-center h-screen w-[200px]` : `hidden`}`}>
+                 <ul className={`lg:flex gap-10 items-center  ${toggle == true ? `flex flex-col bg-[#fff] gap-10 z-50 absolute top-0 right-0 items-center justify-center h-screen w-[200px]` : `hidden`}`}>
                     {
                         navItems.map((list,index)=>(
                         <li key={index}>
@@ -73,7 +73,7 @@ const Header = () => {
                         
                     }
                     
-                  <button className='lg:hidden bg-blue-600 py-2 px-6 text-white font-[600] h-[40px] flex items-center justify-center rounded-[50px]'>Login/Sign In</button>
+                  <Link to="/login"><button className='lg:hidden bg-blue-600 py-2 px-6 text-white font-[600] h-[40px] flex items-center justify-center rounded-[50px]'>Login/Sign In</button></Link>
                 
                  </ul>
                </div>
@@ -82,7 +82,7 @@ const Header = () => {
                 <div className='gap-10 flex items-center'>
                 
                 <div className='hidden lg:block'>
-                  <button className='bg-blue-600 py-2 px-6 text-white font-[600] h-[40px] flex items-center justify-center rounded-[50px]'>Login/Sign In</button>
+                  <Link to="/login"><button className='bg-blue-600 py-2 px-6 text-white font-[600] h-[40px] flex items-center justify-center rounded-[50px]'>Login/Sign In</button></Link>
                 </div>
                 <span className={`lg:hidden z-200 ${toggle?'absolute top4 right-2':''} `}>
                     {!toggle?<BiMenu className="cursor-pointer w-7 h-7" onClick={()=>setToggle(!toggle)} />:<IoMdCloseCircle className="cursor-pointer w-7 h-7" onClick={()=>setToggle(!toggle)} />}

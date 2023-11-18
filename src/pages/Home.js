@@ -6,6 +6,7 @@ import DepartmentDetails from "../components/DepartmentDetails";
 import ServiceDetails from "../components/ServiceDetails";
 import AboutSection from "../components/AboutSection";
 import Testimonials from "../components/Testimonials";
+import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
@@ -27,7 +28,7 @@ const Home = () => {
                     
                   </p>
 
-                  <button className="btn">Request An Appointment</button>
+                  <Link to="/services"><button className="btn">Request An Appointment</button></Link>
                 </div>
 
                 {/* hero counter */}
@@ -77,8 +78,8 @@ const Home = () => {
       <div className="flex items-center justify-between max-w-[1250px] mx-auto ">
 
          <div className="flex flex-col justify-center items-center gap-5">
-            <h2 className="text-[30px]">For an emergency,Please To Contact</h2>
-            <h1 className="text-[38px]">+91 7549365428</h1>
+            <h2 className="text-[18px] md:text-[30px] ">For an emergency,Please To Contact</h2>
+            <h1 className=" text-[22px] md:text-[38px]">+91 7549365428</h1>
          </div>
 
          <div>
